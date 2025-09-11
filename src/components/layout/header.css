@@ -1,0 +1,6 @@
+.ant-menu-horizontal>.ant-menu-item,
+.ant-menu-horizontal>.ant-menu-submenu {
+    padding: 0 20px !important;
+    font-size: 16px;
+}
+

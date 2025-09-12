@@ -1,10 +1,25 @@
+import { useEffect, useState } from "react";
+import Banner from "../components/home/banner";
+import Product from "../components/home/product";
+import { getProduct } from "../services/api.service";
 
 
 const Home = () => {
 
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const response = await getProduct();
+            setProducts(response.data);
+        };
+        fetchProducts();
+    }, []);
+
     return (
         <>
-            <div>Home Page  </div>
+            <Banner />
+            <Product products={products} />
         </>
     )
 }

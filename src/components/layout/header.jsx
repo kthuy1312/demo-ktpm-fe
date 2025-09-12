@@ -98,17 +98,17 @@ const Header = () => {
             theme={{
                 components: {
                     Menu: {
-                        itemSelectedColor: 'black',      
-                        itemHoverColor: 'black',         
+                        itemSelectedColor: 'black',
+                        itemHoverColor: 'black',
                         horizontalItemSelectedColor: 'black',
-                        horizontalItemBorderColor: 'black', 
+                        horizontalItemBorderColor: 'black',
                     },
                 },
             }}
         >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <a href="/" >
-                    <img src="/logo.png" alt="logo" style={{ height: 30, marginRight: 40 }} />
+                    <img src="/images/logo.png" alt="logo" style={{ height: 30, marginRight: 40 }} />
                 </a>
                 <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
             </div>

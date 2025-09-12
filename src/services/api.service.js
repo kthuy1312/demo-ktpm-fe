@@ -15,9 +15,13 @@ import axios from './axios.customize';
 //     }
 //     return axios.put(URL_BACKEND, data);
 // }
+const getProduct = () => {
+    const URL_BACKEND = `/api/products`;
+    return axios.get(URL_BACKEND);
+}
 
 
 
 export {
-
+    getProduct
 }

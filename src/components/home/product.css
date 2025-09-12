@@ -1,23 +1,22 @@
 .product-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 sản phẩm / dòng */
-    gap: 20px;
+    gap: 28px;
     padding: 20px;
     margin-top: 30px;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-card {
     border: 1px solid #ddd;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     background-color: #fff;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-radius: 51px;
     box-shadow: 31px 31px 62px #d1d1d1,
         -31px -31px 62px #ffffff;
-    height: 440px;
+    height: 450px;
 }
 
 .product-card:hover {
@@ -34,31 +33,32 @@
 
 .product-name {
     font-size: 28px;
-    margin: 28px 0;
+    margin: 18px 0 3px 0;
 }
 
 .product-category {
-    font-size: 13px;
+    font-size: 18px;
     color: #777;
+    margin: 0 0 8px 0;
 }
 
 
 .product-price {
-    color: #ff525f;
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: #ff3849;
+    font-weight: 700;
     font-size: 24px;
+    margin: 18px 0 15px 0;
 }
 
 
 button.add-to-cart-button {
     padding: 13px 24px;
-    font-size: 17px;
+    font-size: 18px;
     border-radius: 22px;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-
+    margin: 0;
 }
 
 .add-to-cart-button:hover {
@@ -66,6 +66,9 @@ button.add-to-cart-button {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
+
+
 
 /* Responsive */
 @media (max-width: 1024px) {

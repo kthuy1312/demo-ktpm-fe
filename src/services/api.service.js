@@ -19,9 +19,13 @@ const getProduct = () => {
     const URL_BACKEND = `/api/products`;
     return axios.get(URL_BACKEND);
 }
+const getProductPagination = (page, pageSize) => {
+    const URL_BACKEND = `/api/product?page=${page}&pageSize=${pageSize}`;
+    return axios.get(URL_BACKEND);
+}
 
 
 
 export {
-    getProduct
+    getProduct, getProductPagination
 }

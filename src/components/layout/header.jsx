@@ -7,7 +7,6 @@ const items = [
 
     {
         label: 'MAC',
-        key: 'mac',
         children: [
 
             {
@@ -24,7 +23,6 @@ const items = [
     },
     {
         label: 'IPHONE',
-        key: 'iphone',
         children: [
 
             {
@@ -41,7 +39,6 @@ const items = [
     },
     {
         label: 'IPAD',
-        key: 'ipad',
         children: [
 
             {
@@ -57,7 +54,6 @@ const items = [
     },
     {
         label: 'AIRPODS',
-        key: 'airpods',
         children: [
 
             {
@@ -73,14 +69,11 @@ const items = [
         ],
     },
     {
-        key: 'search',
-        icon: <SearchOutlined />,
+        icon: <SearchOutlined style={{ fontSize: "17px" }} />,
 
     },
     {
-        key: 'cart',
-        icon: <ShoppingOutlined />,
-
+        icon: <ShoppingOutlined style={{ fontSize: "17px" }} />,
     },
 
 ];

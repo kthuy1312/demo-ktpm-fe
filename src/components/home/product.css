@@ -1,9 +1,43 @@
+/* --------------------TITLE----------------------------------------- */
+.product-section {
+    background-color: #f6f6f6;
+    height: 100%;
+    caret-color: transparent;
+}
+
+.product-section__title {
+    font-size: 48px;
+    color: #100f0f63;
+    text-align: center;
+    margin: 40px 0 0 0;
+    padding: 5px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3:hover {
+    background-color: #ffffffe1;
+    animation: shake 0.4s infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* --------------------CARD----------------------------------------- */
 .product-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -83,4 +117,61 @@ button.add-to-cart-button {
         grid-template-columns: 1fr;
         /* Mobile: 1 sản phẩm */
     }
+}
+
+
+/* -------------------------PAGINATION----------------------------------------------------------- */
+
+/* Container */
+.ant-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 60px 0;
+}
+
+/* Nút số trang */
+.ant-pagination-item {
+    border-radius: 8px !important;
+    border: 1px solid #ddd !important;
+    margin: 0 4px !important;
+    transition: all 0.3s ease;
+    min-width: 45px !important;
+    height: 45px !important;
+    font-size: 18px !important;
+    line-height: 43px !important;
+}
+
+.ant-pagination-item:hover {
+    border-color: #000000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Trang hiện tại */
+.ant-pagination-item-active {
+    background-color: #b3b3b3d5 !important;
+    border-color: #ffffff !important;
+}
+
+.ant-pagination-item-active a {
+    color: #ffffff !important;
+}
+
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
+    border-radius: 8px !important;
+    border: 1px solid #ddd !important;
+    min-width: 45px !important;
+    height: 45px !important;
+    font-size: 15px !important;
+    line-height: 43px !important;
+}
+
+.ant-pagination-prev:hover .ant-pagination-item-link,
+.ant-pagination-next:hover .ant-pagination-item-link {
+    border-color: #000000 !important;
+    color: #000000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
 }

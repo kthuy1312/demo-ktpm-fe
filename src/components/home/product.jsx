@@ -16,7 +16,7 @@ const Product = (props) => {
                 setPage(pagination)
 
 
-                const target = document.querySelector('.product-container');
+                const target = document.querySelector('.product-section');
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'

@@ -15,7 +15,7 @@ import axios from './axios.customize';
 //     }
 //     return axios.put(URL_BACKEND, data);
 // }
-const getProduct = () => {
+const getAllProduct = () => {
     const URL_BACKEND = `/api/products`;
     return axios.get(URL_BACKEND);
 }
@@ -24,8 +24,11 @@ const getProductPagination = (page, pageSize) => {
     return axios.get(URL_BACKEND);
 }
 
-
+const getAllCategory = () => {
+    const URL_BACKEND = `/api/category`;
+    return axios.get(URL_BACKEND);
+}
 
 export {
-    getProduct, getProductPagination
+    getAllProduct, getProductPagination, getAllCategory
 }

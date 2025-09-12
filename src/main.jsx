@@ -7,6 +7,7 @@ import {
 import ErrorPage from './pages/error.jsx';
 import 'nprogress/nprogress.css';
 import Home from './pages/home.jsx';
+import './styles/global.css'
 
 const router = createBrowserRouter([
   {

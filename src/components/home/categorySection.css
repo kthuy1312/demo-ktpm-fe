@@ -1,0 +1,24 @@
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 100px 15px 100px;
+}
+
+.category-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.see-more {
+    font-size: 20px;
+    color: #1976d2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.see-more:hover {
+    color: #0d47a1;
+    text-decoration: underline;
+}

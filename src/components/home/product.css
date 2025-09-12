@@ -11,7 +11,6 @@
     text-align: center;
     margin: 40px 0 0 0;
     padding: 5px 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h3:hover {
@@ -36,9 +35,8 @@ h3:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
-    padding: 20px;
+    padding: 60px;
     margin-top: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-card {
@@ -108,14 +106,31 @@ button.add-to-cart-button {
 @media (max-width: 1024px) {
     .product-container {
         grid-template-columns: repeat(2, 1fr);
-        /* Tablet: 2 sản phẩm */
     }
 }
 
 @media (max-width: 600px) {
     .product-container {
         grid-template-columns: 1fr;
-        /* Mobile: 1 sản phẩm */
+    }
+}
+
+@media (min-width: 2600px) {
+    .product-container {
+        gap: 0;
+    }
+
+    .product-card {
+        transform: scale(0.8);
+        transform-origin: top center;
+        height: 555px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 330px;
+        object-fit: contain;
+        border-radius: 8px;
     }
 }
 

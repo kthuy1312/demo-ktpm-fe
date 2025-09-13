@@ -1,5 +1,4 @@
 
-import axios from 'axios';
 import './product.css'
 import { Pagination } from 'antd';
 const Product = (props) => {

@@ -3,6 +3,7 @@ import Banner from "../components/home/banner";
 import Product from "../components/home/product";
 import { getAllCategory, getAllProduct, getProductPagination } from "../services/api.service";
 import CategorySection from "../components/home/categorySection";
+import { Spin } from "antd";
 
 
 const Home = () => {
@@ -19,10 +20,20 @@ const Home = () => {
     const [totalProduct, setTotalProduct] = useState(0);
 
 
+    // loading
+    const [isAppLoading, setIsAppLoading] = useState(true);
+
     useEffect(() => {
-        fetchProducts();
-        fetchPagination();
-        fetchCategories();
+        setIsAppLoading(true);
+
+        Promise.all([
+            fetchProducts(),
+            fetchPagination(),
+            fetchCategories()
+        ]).finally(() => {
+            setIsAppLoading(false);
+        });
+
     }, [page]);
 
 
@@ -50,33 +61,43 @@ const Home = () => {
     return (
         <>
             <Banner />
-            <Product
-                products={products}
-                page={page} setPage={setPage}
-                pageSize={pageSize} setPageSize={setPageSize}
-                totalPages={totalPages} setTotalPages={setTotalPages}
-                totalProduct={totalProduct} setTotalProduct={setTotalProduct}
-            />
 
+            {isAppLoading ? (
+                <div style={{ textAlign: "center", margin: "50px 0" }}>
+                    <Spin size="large" />
+                </div>
+            ) : (
 
-            {categories.map((cat) => {
-                const productByCategory = allProducts.filter(
-                    (product) => product.category_id === cat.category_id
-                );
-
-                if (productByCategory.length === 0) return null;
-                return (
-                    <CategorySection
-                        key={cat.category_id}
-                        category={cat}
-                        products={productByCategory.slice(0, 4)} // chỉ lấy 4 sản phẩm để hiện
+                <>
+                    <Product
+                        products={products}
+                        page={page} setPage={setPage}
+                        pageSize={pageSize} setPageSize={setPageSize}
+                        totalPages={totalPages} setTotalPages={setTotalPages}
+                        totalProduct={totalProduct} setTotalProduct={setTotalProduct}
                     />
-                );
-            })}
 
+                    {categories.map((cat) => {
+                        const productByCategory = allProducts.filter(
+                            (product) => product.category_id === cat.category_id
+                        );
 
+                        if (productByCategory.length === 0) return null;
+
+                        return (
+                            <CategorySection
+                                key={cat.category_id}
+                                category={cat}
+                                products={productByCategory.slice(0, 4)}
+                            />
+                        );
+                    })}
+                </>
+            )}
         </>
-    )
+    );
+
+
 }
 
 export default Home;    

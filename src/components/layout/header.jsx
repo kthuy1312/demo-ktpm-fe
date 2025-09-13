@@ -86,7 +86,6 @@ const Header = () => {
         setCurrent(e.key);
     };
     return (
-
         <ConfigProvider
             theme={{
                 components: {
@@ -99,16 +98,17 @@ const Header = () => {
                 },
             }}
         >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <a href="/" >
-                    <img src="/images/logo.png" alt="logo" style={{ height: 30, marginRight: 40 }} />
-                </a>
-                <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+            <div className="header-sticky">
+                <div className="header-container">
+                    <a href="/">
+                        <img src="/images/logo.png" alt="logo" className="header-logo" />
+                    </a>
+                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+                </div>
             </div>
         </ConfigProvider>
-
     );
-}
+};
 
 
 export default Header;

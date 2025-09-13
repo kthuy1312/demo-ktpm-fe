@@ -33,9 +33,14 @@ const App = () => {
         </div>
         :*/}
       <>
-        <Header />
-        <Outlet />
-        <Footer />
+        <div className="app-wrapper">
+          <Header />
+          <main className="main-content">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+
       </>
       {/* } */}
     </>

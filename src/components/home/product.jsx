@@ -1,4 +1,5 @@
 
+import { useNavigate } from 'react-router-dom';
 import './product.css'
 import { Pagination } from 'antd';
 const Product = (props) => {
@@ -8,6 +9,9 @@ const Product = (props) => {
             pageSize,
             totalProduct } = props
     // console.log(props)
+
+
+    const navigate = useNavigate();
 
     const changePage = (pagination) => {
         if (pagination) {
@@ -24,21 +28,27 @@ const Product = (props) => {
         }
     }
 
+    //chuyển hướng tới trang chi tiết sản phẩm
+    const goToDetailPage = (id) => {
+        navigate(`/product/${id}`);
+    };
+
     return (
         <>
             <div className="product-section">
                 <h3 className="product-section__title">ALL PRODUCTS</h3></div>
             <div className="product-container">
                 {products.map((item) => (
-                    <div key={item.id} className="product-card">
+                    <div key={item.id} className="product-card" >
                         <img
                             src={`${import.meta.env.VITE_BACKEND_URL}/product/${item.image}`}
                             alt={item.name}
                             className="product-image"
+                            onClick={() => goToDetailPage(item.id)}
                         />
-                        <h3 className="product-name">{item.name}</h3>
+                        <h3 className="product-name" onClick={() => goToDetailPage(item.id)}>{item.name}</h3>
                         <p className="product-category">{item.category?.name}</p>
-                        <p className="product-price">{item.basePrice}$</p>
+                        <p className="product-price" >{item.basePrice}$</p>
                         <button className="add-to-cart-button">Add to Cart</button>
                     </div>
                 ))}

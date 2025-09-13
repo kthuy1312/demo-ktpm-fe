@@ -2,13 +2,18 @@
     background: linear-gradient(135deg, #d3d3d3, #6b6b6b);
     color: #fff;
     padding: 25px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
     margin-top: 50px;
 }
 
+/* Footer container */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    min-height: 100px;
 }
 
 .footer-about {

@@ -61,11 +61,13 @@ h3:hover {
     height: 230px;
     object-fit: contain;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .product-name {
     font-size: 28px;
     margin: 18px 0 3px 0;
+    cursor: pointer;
 }
 
 .product-category {

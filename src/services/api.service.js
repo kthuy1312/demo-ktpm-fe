@@ -28,7 +28,11 @@ const getAllCategory = () => {
     const URL_BACKEND = `/api/category`;
     return axios.get(URL_BACKEND);
 }
+const getProductById = (id) => {
+    const URL_BACKEND = `/api/product/${id}`;
+    return axios.get(URL_BACKEND);
+}
 
 export {
-    getAllProduct, getProductPagination, getAllCategory
+    getAllProduct, getProductPagination, getAllCategory, getProductById
 }

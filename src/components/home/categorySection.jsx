@@ -1,9 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import "./categorySection.css";
 import { Divider } from "antd";
 
 const CategorySection = (props) => {
     const { category, products } = props
     // console.log(props)
+
+    const navigate = useNavigate();
+    //chuyển hướng tới trang chi tiết sản phẩm
+    const goToDetailPage = (id) => {
+        navigate(`/product/${id}`);
+    };
+
     return (
         <>
             <Divider />
@@ -24,8 +32,12 @@ const CategorySection = (props) => {
                                 src={`${import.meta.env.VITE_BACKEND_URL}/product/${item.image}`}
                                 alt={item.name}
                                 className="product-image"
+                                onClick={() => goToDetailPage(item.id)}
                             />
-                            <h3 className="product-name">{item.name}</h3>
+                            <h3 className="product-name"
+                                onClick={() => goToDetailPage(item.id)}>
+                                {item.name}
+                            </h3>
                             <p className="product-category">{item.category?.name}</p>
                             <p className="product-price">{item.basePrice}$</p>
                             <button className="add-to-cart-button">Add to Cart</button>

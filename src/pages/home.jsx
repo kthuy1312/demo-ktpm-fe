@@ -6,7 +6,7 @@ import CategorySection from "../components/home/categorySection";
 import { Spin } from "antd";
 
 
-const Home = () => {
+const HomePage = () => {
 
     const [products, setProducts] = useState([]);  //spam theo pagination
     const [allProducts, setAllProducts] = useState([]); //dùng cho category ở home
@@ -62,42 +62,42 @@ const Home = () => {
         <>
             <Banner />
 
-            {isAppLoading ? (
+            {/* {isAppLoading ? (
                 <div style={{ textAlign: "center", margin: "50px 0" }}>
                     <Spin size="large" />
                 </div>
             ) : (
 
-                <>
-                    <Product
-                        products={products}
-                        page={page} setPage={setPage}
-                        pageSize={pageSize} setPageSize={setPageSize}
-                        totalPages={totalPages} setTotalPages={setTotalPages}
-                        totalProduct={totalProduct} setTotalProduct={setTotalProduct}
+                <> */}
+            <Product
+                products={products}
+                page={page} setPage={setPage}
+                pageSize={pageSize} setPageSize={setPageSize}
+                totalPages={totalPages} setTotalPages={setTotalPages}
+                totalProduct={totalProduct} setTotalProduct={setTotalProduct}
+            />
+
+            {categories.map((cat) => {
+                const productByCategory = allProducts.filter(
+                    (product) => product.category_id === cat.category_id
+                );
+
+                if (productByCategory.length === 0) return null;
+
+                return (
+                    <CategorySection
+                        key={cat.category_id}
+                        category={cat}
+                        products={productByCategory.slice(0, 4)}
                     />
-
-                    {categories.map((cat) => {
-                        const productByCategory = allProducts.filter(
-                            (product) => product.category_id === cat.category_id
-                        );
-
-                        if (productByCategory.length === 0) return null;
-
-                        return (
-                            <CategorySection
-                                key={cat.category_id}
-                                category={cat}
-                                products={productByCategory.slice(0, 4)}
-                            />
-                        );
-                    })}
-                </>
-            )}
+                );
+            })}
+            {/* </>
+            )} */}
         </>
     );
 
 
 }
 
-export default Home;    
+export default HomePage;    

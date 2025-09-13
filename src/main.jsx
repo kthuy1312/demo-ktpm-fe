@@ -6,8 +6,9 @@ import {
 } from "react-router-dom";
 import ErrorPage from './pages/error.jsx';
 import 'nprogress/nprogress.css';
-import Home from './pages/home.jsx';
+import HomePage from './pages/home.jsx';
 import './styles/global.css'
+import DetailProductPage from './pages/detailProduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,12 +18,12 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <HomePage />
       },
-      // {
-      //   path: "/users",
-      //   element: <UserPage />
-      // },
+      {
+        path: "/product/:id",
+        element: <DetailProductPage />
+      },
       // {
       //   path: "/books",
       //   element: (

@@ -2,6 +2,7 @@
 import Header from './components/layout/header';
 import Footer from './components/layout/footer';
 import { Outlet } from 'react-router-dom';
+import BackToTopButton from './components/layout/BackToTopButton';
 
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
           <main className="main-content">
             <Outlet />
           </main>
+          <BackToTopButton />
           <Footer />
         </div>
 

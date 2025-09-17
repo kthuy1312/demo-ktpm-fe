@@ -9,6 +9,7 @@ import 'nprogress/nprogress.css';
 import HomePage from './pages/home.jsx';
 import './styles/global.css'
 import DetailProductPage from './pages/detailProduct.jsx';
+import CartPage from './pages/cart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <DetailProductPage />
+      },
+      {
+        path: "/cart",
+        element: <CartPage />
       },
       // {
       //   path: "/books",

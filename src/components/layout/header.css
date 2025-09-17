@@ -19,8 +19,9 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px 20px;
+    gap: 24px;
 }
 
 .header-logo {
@@ -28,9 +29,19 @@
     margin-right: 40px;
 }
 
-/* Menu horizontal padding */
-.ant-menu-horizontal>.ant-menu-item,
-.ant-menu-horizontal>.ant-menu-submenu {
-    padding: 0 20px !important;
-    font-size: 16px;
+.header-menu {
+    flex: 1;
+    min-width: 0;
+    border-bottom: none !important;
+    justify-content: flex-end;
+}
+
+.header-menu .ant-menu-item,
+.header-menu .ant-menu-submenu {
+    padding: 0 14px !important;
+    font-size: 15px;
+}
+
+.header-menu .ant-menu-item:last-child {
+    padding-right: 0 !important;
 }

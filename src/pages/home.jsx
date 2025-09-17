@@ -41,11 +41,12 @@ const HomePage = () => {
 
     const fetchPagination = async () => {
         const response = await getProductPagination(page, pageSize);
+        console.log(response);
         setProducts(response.data);
         setPage(response.meta.current);
         setPageSize(response.meta.pageSize);
         setTotalPages(response.meta.current);
-        setTotalProduct(response.meta.totalProduct);
+        // setTotalProduct(response.meta.totalProduct);
     }
 
     const fetchCategories = async () => {
@@ -74,7 +75,7 @@ const HomePage = () => {
                 page={page} setPage={setPage}
                 pageSize={pageSize} setPageSize={setPageSize}
                 totalPages={totalPages} setTotalPages={setTotalPages}
-                totalProduct={totalProduct} setTotalProduct={setTotalProduct}
+            totalProduct={totalProduct} setTotalProduct={setTotalProduct}
             />
 
             {categories.map((cat) => {

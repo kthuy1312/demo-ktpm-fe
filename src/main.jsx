@@ -10,6 +10,7 @@ import HomePage from './pages/home.jsx';
 import './styles/global.css'
 import DetailProductPage from './pages/detailProduct.jsx';
 import CartPage from './pages/cart.jsx';
+import LoginPage from './pages/login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,10 +40,10 @@ const router = createBrowserRouter([
       // }
     ]
   },
-  // {
-  //   path: "/login",
-  //   element: <LoginPage />
-  // },
+  {
+    path: "/login",
+    element: <LoginPage />
+  },
   // {
   //   path: "/register",
   //   element: <RegisterPage />

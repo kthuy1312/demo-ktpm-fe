@@ -11,6 +11,7 @@ import './styles/global.css'
 import DetailProductPage from './pages/detailProduct.jsx';
 import CartPage from './pages/cart.jsx';
 import LoginPage from './pages/login.jsx';
+import RegisterPage from './pages/register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,10 +45,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage />
   },
-  // {
-  //   path: "/register",
-  //   element: <RegisterPage />
-  // }
+  {
+    path: "/register",
+    element: <RegisterPage />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
